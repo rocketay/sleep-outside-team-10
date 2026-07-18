@@ -10,3 +10,9 @@ const listElement = document.querySelector(".product-list");
 // create an instance of ProductList and initialize it
 const myList = new ProductList("tents", dataSource, listElement);
 myList.init();
+
+// listen for changes on the sort dropdown and re-sort the list
+const sortSelect = document.getElementById("sortSelect");
+sortSelect.addEventListener("change", function (e) {
+  myList.sortProducts(e.target.value);
+});
